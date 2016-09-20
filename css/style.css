@@ -1,0 +1,84 @@
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+*, *:before, *after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  margin: 0;
+}
+
+.container, .container > div {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.container {
+  flex-flow: row wrap;
+}
+
+.container > div {
+  -ms-flex-align: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.split-left, .split-right {
+  flex-basis: 100%;
+}
+
+@media all and (min-width: 600px) {
+  .container {
+    height: 100vh;
+  }
+
+  .split-left, .split-right {
+    flex: 1;
+  }
+}
+
+/* left half specific */
+.split-left {
+  color: white;
+  background-color: #286fdc;
+}
+
+.flocab-logo {
+  width: 200px;
+}
+
+.left-content {
+  width: 65%;
+}
+
+.left-content h1 {
+  font-size: 41px;
+  font-weight: bold;
+  line-height: 45px;
+}
+
+.list-items {
+  padding-left: 15px;
+}
+
+.list-items li {
+  list-style-image:url("../img/bullet.svg");
+  padding-left: 10px;
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 12px;
+}
+
+/* right half specific */
+.split-right {
+  background-color: white;
+}
