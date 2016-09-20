@@ -52,6 +52,11 @@ body {
   background-color: #286fdc;
 }
 
+/* url("../img/border-bkg-top.png") 50% 50% top left no-repeat,
+            url("../img/tile.png") 50% 50% no-repeat,
+            url("../img/border-bkg-bottom.png") 50% 50%;
+*/
+
 .flocab-logo {
   width: 200px;
 }
@@ -81,4 +86,52 @@ body {
 /* right half specific */
 .split-right {
   background-color: white;
+}
+
+.right-content {
+  width: 75%;
+}
+
+/* heading */
+.step-heading, .section-heading {
+  display: flex;
+  -ms-flex-align: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+  align-items: center;
+}
+
+.step-heading {
+  justify-content: space-between;
+}
+
+.step-heading h2 {
+  font-weight: bold;
+  font-size: 28px;
+  color: #286fdc;
+}
+
+.step-heading span {
+  font-weight: bold;
+  font-size: 19px;
+  color: #99a3a3;
+}
+
+.section-heading h3 {
+  font-weight: bold;
+  font-size: 19px;
+  color: #424242;
+}
+
+.section-heading span {
+  font-size: 16px;
+  font-style: italic;
+  color: #99a3a3;
+  margin-left: 5px;
+}
+
+/* content */
+ul.subjects {
+  list-style: none;
+  padding-left: 0;
 }
