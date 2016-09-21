@@ -10,47 +10,87 @@
     <!-- stylesheets -->
     <link re="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- fontawesome -->
+    <script src="https://use.fontawesome.com/6eb68ff3ac.js"></script>
 </head>
 <body>
-  <div class="container">
+  <div class="split-flex">
+
+    <!-- LEFT -->
     <div class="split-left">
       <div class="left-content">
-        <div class="flocab-logo">
-          <img src="img/flocab-logo-white.svg">
+        <div class="container">
+
+          <div class="flocab-logo">
+            <img src="img/flocab-logo-white.svg">
+          </div>
+
+          <h1>Try it free for 14 days!</h1>
+
+          <ul class="list-items">
+            <li>The quick, brown fox jumps over a lazy dog.</li>
+            <li>Joaquin Phoenix was gazed by MTV for luck.</li>
+            <li>Five quacking zephyrs jolt my wax bed.</li>
+            <li>Brick quiz whangs jumpy veldt fox.</li>
+            <li>Watch "Jeopardy!", Alex Trebek's fun TV quiz game.</li>
+          </ul>
         </div>
-
-        <h1>Try it free for 14 days!</h1>
-
-        <ul class="list-items">
-          <li>The quick, brown fox jumps over a lazy dog.</li>
-          <li>Joaquin Phoenix was gazed by MTV for luck.</li>
-          <li>Five quacking zephyrs jolt my wax bed.</li>
-          <li>Brick quiz whangs jumpy veldt fox.</li>
-          <li>Watch "Jeopardy!", Alex Trebek's fun TV quiz game.</li>
-        </ul>
       </div>
     </div>
 
+    <!-- RIGHT -->
     <div class="split-right">
       <div class="right-content">
+
         <div class="step-heading">
           <h2>2. Tell us about you</h1>
           <span>Step 2 of 3</span>
         </div>
 
-        <section class="choices-section">
+        <!-- CHOOSE ROLE AND SCHOOL -->
+        <section class="choose-section">
           <div class="section-content">
-            <div class="roles">
-              Choose your role
+
+            <div class="choose-roles">
+              <div class="dropdown roles">
+                <div class="selected">Choose your role<i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                <ul class="bottom">
+                  <li>Batman</li>
+                  <li>Superman</li>
+                  <li>Iron Man</li>
+                </ul>
+              </div>
             </div>
+
+            <div class="zip-school">
+              <div class="zip-info">
+                <input type="text" placeholder="Zip code "/>
+              </div>
+
+              <div class="dropdown schools">
+                <div class="selected">Choose your school<i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                <ul class="bottom">
+                  <li>Hogwarts School of Witchcraft and Wizardry</li>
+                  <li>Xavier's School for Gifted Youngsters</li>
+                  <li>Bayside High School</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="outside-us">
+              <a href="#">Are you outside the US?</a>
+            </div>
+
           </div>
         </section>
 
+        <!-- CHOOSE SUBJECTS -->
         <section class="subject-section">
           <div class="section-heading">
             <h3>What subjects do you teach?</h3>
             <span>optional</span>
           </div>
+
           <div class="section-content">
             <ul class="subjects">
               <li>
@@ -80,6 +120,7 @@
           </div>
         </section>
 
+        <!-- SELECT GRADES -->
         <section class="grade-section">
           <div class="section-heading">
             <h3>What grades do you teach?</h3>
@@ -104,6 +145,11 @@
             </div>
           </div>
         </section>
+
+        <!-- CONTINUE -->
+        <div class="button-section">
+          <button>Continue</button>
+        </div>
 
       </div>
     </div>
