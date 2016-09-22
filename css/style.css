@@ -79,12 +79,12 @@ body a {
   content: "";
   position: absolute;
   width: 100%;
+  height: 100%;
 }
 
 @media all and (min-width:768px) {
   .flex-split::before {
     width: 50%;
-    height: 100%;
   }
 }
 
@@ -108,22 +108,23 @@ body a {
   z-index: -1;
 }
 
-.split-left::after {
-  background-image: url("../img/ragged-edge.png");
-  background-repeat: repeat-y;
-  background-position: center;
-  background-size: 10px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  content: "";
-  height: 100%;
-  width: 10px;
-  z-index: 2;
+@media all and (min-width: 768px){
+  .split-left::after {
+    background-image: url("../img/ragged-edge.png");
+    background-repeat: repeat-y;
+    background-position: center;
+    background-size: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    height: 100%;
+    width: 10px;
+    z-index: 2;
+  }
 }
 
 /* left content */
-
 .container {
   width: 65%;
   margin: 0 auto;
@@ -306,7 +307,13 @@ ul.subjects {
 
 ul.subjects li {
   margin-bottom: 20px;
-  width: 35%;
+  width: 50%;
+}
+
+@media all and (min-width: 1300px) {
+  ul.subjects li {
+    width: 35%;
+  }
 }
 
 ul.subjects input[type="checkbox"] {

@@ -7,7 +7,7 @@ $(function(){
     });
   }
 
-  // select all button toggle
+  // select all button toggle function
   $.fn.selectBoxToggle = function(selectbox){
     var $checkboxes = this;
 
@@ -17,12 +17,25 @@ $(function(){
     });
   }
 
+  // change text function
+  $.fn.changeSelectAll = function(selectbox) {
+    return this.change(function(){
+      if ($(selectbox).is(':checked')) {
+        $(selectbox).siblings('label').html('Deselect all');
+      } else {
+        $(selectbox).siblings('label').html('Select all');
+      }
+    })
+  }
+
   var $subjectInput = $('input[name=subject]');
   var $gradeInput = $('input[name=grade]');
 
   // toggle subjects
   $('#check-all').checkboxToggle($subjectInput);
   $subjectInput.selectBoxToggle('#check-all');
+  $subjectInput.changeSelectAll('#check-all');
+  $('#check-all').changeSelectAll('#check-all');
 
   // toggle grades
   $('#all').checkboxToggle($gradeInput);
