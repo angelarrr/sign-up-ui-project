@@ -372,8 +372,8 @@ ul.subjects label::before {
   width: 15px;
   height: 15px;
   margin-right: 16px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s;
 }
 
 ul.subjects label:hover::before {
@@ -389,8 +389,8 @@ ul.subjects label::after {
   height: 5px;
   top: 2px;
   left: 6px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 ul.subjects input[type="checkbox"]:checked + label::after {
@@ -425,8 +425,8 @@ ul.subjects input[type="checkbox"]:checked + label::after {
   padding-top: 7px;
   padding-bottom: 7px;
   cursor: pointer;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s;
 }
 
 .select-grade input[type="checkbox"] + label:hover {
@@ -455,6 +455,8 @@ button {
   border: none;
   padding: 15px 32px;
   letter-spacing:2px;
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
 }
 
 button:hover {
