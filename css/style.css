@@ -36,7 +36,7 @@ body a {
   flex-direction: column;
 }
 
-@media all and (min-width: 48em) {
+@media all and (min-width: 900px) {
   .flex-split {
     flex-direction: row;
     height: 100vh;
@@ -50,7 +50,7 @@ body a {
   height: 100%;
 }
 
-@media all and (min-width: 48em) {
+@media all and (min-width: 900px) {
   .flex-split > div {
     width: 50%;
     justify-content: center;
@@ -59,13 +59,19 @@ body a {
 
 /* left half specific */
 .left-content {
-  width: 700px;
+  width: 500px;
   height: 800px;
   position: relative;
   z-index: 1;
   color: #fff;
   background-color: #286fdc;
   overflow: hidden;
+}
+
+@media all and (min-width: 500px) {
+  .left-content {
+    width: 700px;
+  }
 }
 
 .split-left {
@@ -82,7 +88,7 @@ body a {
   height: 100%;
 }
 
-@media all and (min-width:768px) {
+@media all and (min-width:900px) {
   .flex-split::before {
     width: 50%;
   }
@@ -136,7 +142,7 @@ body a {
 }
 
 .container h1 {
-  font-size: 41px;
+  font-size: 31px;
   font-weight: bold;
   line-height: 45px;
 }
@@ -152,9 +158,19 @@ body a {
 .list-items li {
   list-style-image:url("../img/bullet.svg");
   padding-left: 10px;
-  font-size: 20px;
+  font-size: 19px;
   line-height: 30px;
   margin-bottom: 12px;
+}
+
+@media all and (min-width: 500px) {
+  .container h1 {
+    font-size: 41px;
+  }
+
+  .list-items li {
+    font-size: 20px;
+  }
 }
 
 /* right half specific */
@@ -186,13 +202,13 @@ body a {
 
 .step-heading h2 {
   font-weight: bold;
-  font-size: 28px;
+  font-size: 25px;
   color: #286fdc;
 }
 
 .step-heading span {
   font-weight: bold;
-  font-size: 19px;
+  font-size: 16px;
   color: #99a3a3;
 }
 
@@ -208,6 +224,18 @@ body a {
   font-size: 16px;
   font-style: italic;
   color: #99a3a3;
+}
+
+@media all and (min-width: 500px) {
+  .step-heading h2 {
+    font-size: 28px;
+  }
+
+  .step-heading span {
+    font-size: 19px;
+  }
+
+
 }
 
 /* section content */
