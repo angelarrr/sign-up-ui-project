@@ -298,6 +298,12 @@ body a {
   width: 48%;
 }
 
+.error {
+  border: 2px solid #db3723 !important;
+  background-color: #fcf0ee !important;
+  color: #db3723 !important;
+}
+
 .zip-info input[type=text] {
   height: 55px;
   font-size: 16px;

@@ -10,7 +10,6 @@ $(function(){
   // select all button toggle function
   $.fn.selectBoxToggle = function(selectbox){
     var $checkboxes = this;
-
     return $checkboxes.change(function(){
       var check = $checkboxes.filter(':checked').length == $checkboxes.length;
       $(selectbox).prop('checked', check);
@@ -30,14 +29,30 @@ $(function(){
 
   var $subjectInput = $('input[name=subject]');
   var $gradeInput = $('input[name=grade]');
+  var $subjectSelectAll = $('#check-all');
+  var $zipCode = $('input[name=zip-code]');
 
   // toggle subjects
-  $('#check-all').checkboxToggle($subjectInput);
-  $subjectInput.selectBoxToggle('#check-all');
-  $subjectInput.changeSelectAll('#check-all');
-  $('#check-all').changeSelectAll('#check-all');
+  $subjectSelectAll.checkboxToggle($subjectInput);
+  $subjectInput.selectBoxToggle($subjectSelectAll);
+  $subjectInput.changeSelectAll($subjectSelectAll);
+  $subjectSelectAll.changeSelectAll($subjectSelectAll);
 
   // toggle grades
   $('#all').checkboxToggle($gradeInput);
   $gradeInput.selectBoxToggle('#all');
+
+  // zip code input error
+  $('form').submit(function(){
+    if ($zipCode.val() === "") {
+      $zipCode.addClass('error');
+    }
+    return false;
+  });
+
+  $zipCode.change(function(){
+    if ($zipCode.val().length > 0) {
+      $($zipCode).removeClass('error');
+    }
+  })
 });
