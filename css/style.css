@@ -9,7 +9,6 @@ html {
 
 body {
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  margin: 0;
 }
 
 body a {
@@ -19,65 +18,126 @@ body a {
   text-decoration: none;
 }
 
-.split-flex, .split-flex > div {
+.signin-module {
+  width: 100%;
+  margin: 0;
+  padding: 0;
   display: -webkit-box;
-  display: -moz-box;
   display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
-}
-
-.split-flex {
-  flex-flow: row wrap;
-}
-
-.split-flex > div {
-  -ms-flex-align: center;
-	-webkit-align-items: center;
-	-webkit-box-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  align-items: center;
 }
 
-.split-left, .split-right {
-  flex-basis: 100%;
+.flex-split {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-@media all and (min-width: 600px) {
-  .split-flex {
+@media all and (min-width: 48em) {
+  .flex-split {
+    flex-direction: row;
     height: 100vh;
   }
+}
 
-  .split-left, .split-right {
-    flex: 1;
+.flex-split > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+@media all and (min-width: 48em) {
+  .flex-split > div {
+    width: 50%;
+    justify-content: center;
   }
 }
 
 /* left half specific */
-.split-left {
+.left-content {
+  width: 700px;
+  height: 800px;
+  position: relative;
+  z-index: 1;
   color: #fff;
   background-color: #286fdc;
-  z-index: 1;
+  overflow: hidden;
 }
 
-.left-content {
+.split-left {
+  position: relative;
+}
+
+.flex-split::before {
+  background-image: url("../img/tile.png");
+  background-size: 450px;
+  background-position: center;
+  content: "";
+  position: absolute;
   width: 100%;
-  display: flex;
-  -ms-flex-align: center;
-	-webkit-align-items: center;
-	-webkit-box-align: center;
-  justify-content: center;
-  align-items: center;
 }
 
-.left-content h1 {
-  font-size: 41px;
-  font-weight: bold;
-  line-height: 45px;
+@media all and (min-width:768px) {
+  .flex-split::before {
+    width: 50%;
+    height: 100%;
+  }
 }
+
+.left-content::before {
+  background-image: url("../img/border-bkg-top.png");
+}
+
+.left-content::after {
+  background-image: url("../img/border-bkg-bottom.png");
+  bottom: -1px;
+}
+
+.left-content::before, .left-content::after {
+  background-size: 700px;
+  background-position: center;
+  content: "";
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  display: block;
+  z-index: -1;
+}
+
+.split-left::after {
+  background-image: url("../img/ragged-edge.png");
+  background-repeat: repeat-y;
+  background-position: center;
+  background-size: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  height: 100%;
+  width: 10px;
+  z-index: 2;
+}
+
+/* left content */
 
 .container {
   width: 60%;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.container h1 {
+  font-size: 41px;
+  font-weight: bold;
+  line-height: 45px;
 }
 
 .flocab-logo {
@@ -108,6 +168,10 @@ body a {
 
 /* heading on right */
 .step-heading {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   -ms-flex-align: center;
 	-webkit-align-items: center;
@@ -145,7 +209,11 @@ body a {
   color: #99a3a3;
 }
 
-/* content */
+/* section content */
+.section-content {
+  margin-top: 28px;
+}
+
 /* select */
 .your-choice{
   height: 55px;
@@ -186,6 +254,10 @@ body a {
 
 /* zip and schools */
 .zip-school {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   margin: 0 0 20px 0;
   width: 100%;
@@ -221,8 +293,20 @@ textarea:focus, input[type=text]:focus{
 
 /* subjects */
 ul.subjects {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
   padding-left: 0;
+  margin-bottom: 0;
+}
+
+ul.subjects li {
+  margin-bottom: 20px;
+  width: 35%;
 }
 
 ul.subjects input[type="checkbox"] {
@@ -232,7 +316,6 @@ ul.subjects input[type="checkbox"] {
 ul.subjects label {
   display: inline-block;
   position: relative;
-  margin: 5px;
   cursor: pointer;
   font-size: 16px;
   color: #99a3a3;
@@ -247,8 +330,9 @@ ul.subjects label::before {
   display: inline-block;
   width: 15px;
   height: 15px;
-  margin-right: 10px;
-  transition: border-color .2s;
+  margin-right: 16px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 ul.subjects label:hover::before {
@@ -264,7 +348,8 @@ ul.subjects label::after {
   height: 5px;
   top: 2px;
   left: 6px;
-  transition: .2s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 ul.subjects input[type="checkbox"]:checked + label::after {
@@ -277,7 +362,6 @@ ul.subjects input[type="checkbox"]:checked + label::after {
 
 /* grades */
 .select-grade {
-  margin-top: 30px;
   width: 350px;
 }
 
@@ -300,6 +384,8 @@ ul.subjects input[type="checkbox"]:checked + label::after {
   padding-top: 7px;
   padding-bottom: 7px;
   cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .select-grade input[type="checkbox"] + label:hover {
