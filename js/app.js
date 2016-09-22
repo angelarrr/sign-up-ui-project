@@ -50,9 +50,9 @@ $(function(){
     return false;
   });
 
-  $zipCode.change(function(){
+  $zipCode.keyup(function(){
     if ($zipCode.val().length > 0) {
-      $($zipCode).removeClass('error');
+      $zipCode.removeClass('error');
     }
   })
 });
