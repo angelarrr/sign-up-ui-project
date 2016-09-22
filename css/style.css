@@ -65,6 +65,9 @@ body a {
   .flex-split > div {
     width: 50%;
     justify-content: center;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
   }
 }
 
