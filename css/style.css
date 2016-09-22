@@ -474,3 +474,7 @@ button:hover {
   background-color: #30a55f;
   cursor: pointer;
 }
+
+.button-section {
+  margin-bottom: 20px;
+}
